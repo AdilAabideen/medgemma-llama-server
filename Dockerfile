@@ -29,9 +29,7 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-COPY --from=builder /build/llama.cpp/build/bin/llama-server /usr/local/bin/llama-server
-COPY --from=builder /build/llama.cpp/build/bin/libggml*.so* /usr/local/lib/
-COPY --from=builder /build/llama.cpp/build/bin/libllama*.so* /usr/local/lib/ 2>/dev/null || true
+COPY --from=builder /build/llama.cpp/build/bin/ /usr/local/bin/
 
 RUN ldconfig
 
