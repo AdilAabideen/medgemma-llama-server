@@ -38,7 +38,7 @@ RUN mkdir -p /models/medgemma
 
 RUN hf download \
     unsloth/medgemma-4b-it-GGUF \
-    medgemma-4b-it-Q4_K_M.gguf \
+    medgemma-4b-it-Q8_0.gguf \
     --local-dir /models/medgemma
 
 COPY start.sh /app/start.sh
